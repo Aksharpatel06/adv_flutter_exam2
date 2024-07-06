@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   titleAndSearch(height, width),
-                  product(height, homeProviderTrue),
+                  product(height, homeProviderTrue,homeProviderFalse),
                 ],
               ),
             ),

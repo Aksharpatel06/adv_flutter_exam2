@@ -30,8 +30,8 @@ class ProductsScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                        image: NetworkImage(
-                            homeProviderTrue.modal!.recipesList[0].image))),
+                        image: NetworkImage(homeProviderTrue.modal!
+                            .recipesList[homeProviderTrue.foodIndex].image))),
               ),
             ),
           ),
@@ -56,14 +56,15 @@ class ProductsScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          homeProviderTrue.modal!.recipesList[0].name,
+                          homeProviderTrue.modal!
+                              .recipesList[homeProviderTrue.foodIndex].name,
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Text(
-                          '\$ ${homeProviderTrue.modal!.recipesList[0].caloriesPerServing}',
+                          '\$ ${homeProviderTrue.modal!.recipesList[homeProviderTrue.foodIndex].caloriesPerServing}',
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.w700,
@@ -71,7 +72,6 @@ class ProductsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-
                     SizedBox(
                       height: 10,
                     ),
@@ -82,15 +82,22 @@ class ProductsScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    ...List.generate(homeProviderTrue.modal!.recipesList[0].ingredients.length,(index) {
-                      return Text(
-                        '- ${homeProviderTrue.modal!.recipesList[0].ingredients[index]}',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      );
-                    },),
+                    ...List.generate(
+                      homeProviderTrue
+                          .modal!
+                          .recipesList[homeProviderTrue.foodIndex]
+                          .ingredients
+                          .length,
+                      (index) {
+                        return Text(
+                          '- ${homeProviderTrue.modal!.recipesList[homeProviderTrue.foodIndex].ingredients[index]}',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        );
+                      },
+                    ),
                     SizedBox(
                       height: 10,
                     ),
@@ -101,15 +108,22 @@ class ProductsScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    ...List.generate(homeProviderTrue.modal!.recipesList[0].instructions.length,(index) {
-                      return Text(
-                        '- ${homeProviderTrue.modal!.recipesList[0].instructions[index]}',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      );
-                    },)
+                    ...List.generate(
+                      homeProviderTrue
+                          .modal!
+                          .recipesList[homeProviderTrue.foodIndex]
+                          .instructions
+                          .length,
+                      (index) {
+                        return Text(
+                          '- ${homeProviderTrue.modal!.recipesList[homeProviderTrue.foodIndex].instructions[index]}',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        );
+                      },
+                    )
                   ],
                 ),
               ),

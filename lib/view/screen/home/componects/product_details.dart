@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../provider/home_provider.dart';
 
-SizedBox product(double height, HomeProvider homeProviderTrue) {
+SizedBox product(double height, HomeProvider homeProviderTrue,HomeProvider home) {
   return SizedBox(
     height: height * 0.75,
     child: GridView.builder(
@@ -25,6 +25,7 @@ SizedBox product(double height, HomeProvider homeProviderTrue) {
                   MaterialPageRoute(
                     builder: (context) => const ProductsScreen(),
                   ));
+              home.changeIndex(index);
             },
             child: Stack(
               children: [

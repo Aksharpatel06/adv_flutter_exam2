@@ -22,4 +22,12 @@ class HomeProvider extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  int foodIndex=0;
+
+  void changeIndex(int index)
+  {
+    foodIndex = index;
+    notifyListeners();
+  }
 }
